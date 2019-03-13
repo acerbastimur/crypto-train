@@ -1,0 +1,126 @@
+<ion-content class="page-backgorund">
+  <button large clear ion-button menuToggle>
+    <ion-icon color="light" name="menu"></ion-icon>
+  </button>
+
+
+  <!--   <div class="canvasHolder">
+          <canvas  id="coinPie"></canvas>
+          <div id="profileImgHolder">
+            <img class="profileImg" src="assets/imgs/umutacerbastimurPP.jpg" />
+          </div>
+        </div>
+ -->
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <div class="chartHolder">
+          <div class="img1">
+            <canvas id="coinPie"></canvas>
+            <img id="pp" src="assets/imgs/umutacerbastimurPP.jpg">
+          </div>
+        </div>
+      </ion-col>
+      <ion-col>
+        <ion-grid style="margin-top:2vh" text-center>
+          <ion-row text-center>
+            <ion-col id="totalWalletText">
+              Total Wallet
+
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col id="totalWalletAmount">
+              $ {{assetsAsDollar | number:'.1-1'}}
+            </ion-col>
+
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item *ngFor="let asset of assets" [style.border-top]="'5px solid '+ asset.color " style="margin-bottom: 2vh;">
+          <div id="detailsItem{{asset.name}}">
+            <ion-grid>
+              <ion-row text-center>
+                <ion-col>
+                  <img width="30" height="30" src="assets/imgs/coinsPng/{{asset.name |lowercase}}.png" />
+                </ion-col>
+              </ion-row>
+              <ion-row style="margin-top:1vh;" text-center>
+                <ion-col>
+                  {{asset.name}}
+                  <span style="font-size: 12vw">{{asset.amount | number:'.1-4'}}</span>
+                </ion-col>
+              </ion-row>
+              <ion-row style="margin-top:1vh;" text-center>
+                <ion-col>
+                  {{asset.price | number:'.1-4'}}$
+                </ion-col>
+              </ion-row>
+              <ion-row style="margin-top:1vh;" text-center>
+                <ion-col>
+                  <button *ngIf="openWallets.length < 1" (tap)="openSellPanel(asset.name)" style="color:whitesmoke;background-color: rgb(124, 198, 228);height: 5.5vh;width: 40vw;" ion-button round>Sell {{asset.name}}</button>
+                </ion-col>
+              </ion-row>
+
+            </ion-grid>
+          </div>
+
+          
+              <div style="display: none"  id="sellItem{{asset.name}}">
+                <ion-row >
+                  <ion-col>
+                    <img style="float: left;" width="40" height="40" src="assets/imgs/coinsPng/{{asset.name | lowercase}}.png" />
+
+                  <p style="float: left; margin-left: 1vw;margin-top: 1vh;font-size: 6vw;">{{asset.name}}</p>
+                  <p  style="float: right;color: slategrey;display: block;font-size: 6vw;">
+                   ${{instantPriceOfCoin}}
+                  </p>
+                  </ion-col>
+                  
+                </ion-row>  
+                
+                  
+                  <ion-row>
+                    <ion-col>
+                      <p class="youHaveText">You Have : </p>
+                      <p class="youHaveAmount">{{amountExist}} {{asset.name}}</p>
+                    </ion-col>
+                  </ion-row>
+      
+                  <ion-row>
+                    <ion-col>
+                      <p class="amountToSell">Amount to Sell : </p>
+                      <input  step="0.2" [(ngModel)]="amountToSell" (ngModelChange)="totalPriceCalculator(asset.name)"  type="number" class="amountToSellInput" placeholder="0.0000" />
+                    </ion-col>
+                  </ion-row>
+      
+                  <ion-row style="border-bottom: 1px solid rgb(189, 189, 189);">
+                    <ion-col>
+                      <p class="totalText">Total : </p>
+                      <p class="totalPrice"> ${{totalPrice | number:'.1-2'}}</p>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col>
+                      <button class="sellCoinBtn" (tap)=" sell(asset.name)" ion-button round>Sell {{asset.name}}</button>
+                      <button class="cancelSellBtn" ion-button round (tap)="cancel(asset.name)">Cancel</button>
+      
+                    </ion-col>
+                  </ion-row>
+                </div>
+          
+
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+</ion-content>

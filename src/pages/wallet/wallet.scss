@@ -1,0 +1,99 @@
+page-wallet {
+  .img1 {
+    height: auto;
+    width: 56vw;
+    margin-left: -7vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 2;
+  }
+  .coinPie {
+    position: relative;
+    z-index: 3;
+  }
+  #pp {
+    height: 25vw;
+    width: 25vw;
+    margin-left: 16.03vw;
+    margin-top: -26.5vw;
+    margin-right: 0.5vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 100%;
+    position: absolute;
+    z-index: -1;
+  }
+  #totalWalletText {
+      color: white;
+    font-size: 4vw;
+    float: left;
+    margin-left: -6vw;
+
+    }
+    #totalWalletAmount {
+        color: white;
+    font-size: 6vw;
+    float: left;
+    margin-top: 0vw;
+    margin-left: -6vw;
+
+    }
+
+  
+
+
+    .walletText {
+      float: left;
+    }
+   .walletAmount {
+     float: right;
+   }
+   .youHaveText {
+     float: left;
+     margin-top: 1vh;
+
+   }
+   .youHaveAmount {
+     float: right;
+     margin-top: 1vh;
+
+   }
+   .amountToSell {
+    float: left;
+    margin-top: 2vh;
+  }
+  .amountToSellInput {
+    float: right;
+    height: 4vh;
+    width: 20%;
+    margin-top: 1vh;
+    border: 0;
+    border-radius: 6%;
+    border-bottom: 1px solid rgb(189, 189, 189);
+    background-color: rgb(247, 247, 247);
+  }
+
+  .totalText {
+    float: left;
+    margin-top: 4vh;
+
+  }
+ .totalPrice {
+   float: right;
+   margin-top: 4vh;
+
+ }
+ .sellCoinBtn {
+  width: 30vw;
+  background-color: rgb(196, 179, 172);
+  border: 0.22vw outset #3aa6ff;
+  float:right; 
+}
+.cancelSellBtn {
+  width:30vw;
+  background-color: rgb(196, 179, 172);
+  border: 0.22vw outset #2bb6ff;
+  float:left; 
+}
+}

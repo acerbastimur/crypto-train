@@ -1,0 +1,33 @@
+page-register {
+    .headerText {
+        font-size: 180%;
+        font-weight: 700;
+        
+    }
+    .input-background:first-child {
+        background-color: rgba(255, 255, 255, 0.678);
+        height: 6vh;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;    
+        font-weight: 400;
+    }
+    .input-background {
+        background-color: rgba(255, 255, 255, 0.678);
+        height: 6vh;
+        font-weight: 400;
+    }
+    .input-background:last-child {
+        background-color: rgba(255, 255, 255, 0.678);
+        height: 6vh;
+        border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;    
+    
+    }
+    #fontProp {
+        font-weight: 400;
+    }
+    #login {
+        font-weight: 700;
+
+    }
+}

@@ -1,0 +1,82 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+.page-backgorund {
+    background: #1B1931;
+}
+.profileImgHolder {
+    border-radius: 100%;
+    overflow: hidden;
+    width: 50%;
+    float: left;
+    margin-left: 2%;
+}
+
+.profileImg {
+width: auto;
+
+
+}
+#menu {
+    width: 70%;
+    
+}
+#userNameSlider {
+display: block;
+float: left;
+margin-left: 2%;
+}
+
+#userNameSlider {
+    color: rgb(37, 37, 37);
+    text-shadow: 1px 2px 6px rgba(84, 98, 121, 0.6);
+    font-size: 5vw;
+}
+
+#sliderImgs {
+    width: 15%;
+    margin-left: 3%;
+    display: block;
+    float: left;
+ }
+#sliderMenuTexts {
+    display: block;
+    float: left;
+    font-size: 5vw;
+    margin-top: 1vh;
+    margin-left: 6vw;
+    color: rgb(49, 49, 51);
+    font-weight: 300;
+}
+#sliderHoverEvent:hover {
+    animation-name: wiggle;
+	animation-duration: 1s;       
+
+}
+
+@keyframes wiggle {
+    0% { transform: skewX(9deg); }
+    10% { transform: skewX(-8deg); }
+    20% { transform: skewX(7deg); }
+    30% { transform: skewX(-6deg); }
+    40% { transform: skewX(5deg); }
+    50% { transform: skewX(-4deg); }
+    60% { transform: skewX(3deg); }
+    70% { transform: skewX(-2deg); }
+    80% { transform: skewX(1deg); }
+    90% { transform: skewX(0deg); }
+	100% { transform: skewX(0deg); }
+}

@@ -1,0 +1,80 @@
+<ion-menu   id="menu" [content]="content">
+   
+
+  <ion-content style="width: 70%" >
+    <ion-grid style="margin-top: 8vh;">
+      <ion-row>
+        <ion-col >
+          <div class="profileImgHolder">
+            <img class="profileImg" src="assets/imgs/umutacerbastimurPP.jpg"/>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid style="width: 120%;">
+      
+      <ion-row >
+        <ion-col>
+                  <p id="userNameSlider">Umut Acerbaştimur</p>
+
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col menuToggle (tap)="openPage('TradePage')" id="sliderHoverEvent">
+          <img id="sliderImgs" src="assets/icon/stats-4.png"/>
+          <p id="sliderMenuTexts">Trade</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col menuToggle (tap)="openPage('WalletPage')" id="sliderHoverEvent">
+          <img id="sliderImgs" src="assets/icon/wallet.png"/>
+          <p id="sliderMenuTexts">Wallet</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col menuToggle  id="sliderHoverEvent">
+          <img id="sliderImgs" src="assets/icon/repeat-1.png"/>
+          <p id="sliderMenuTexts">Transfer</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col id="sliderHoverEvent">
+          <img id="sliderImgs" src="assets/icon/hourglass-3.png"/>
+          <p id="sliderMenuTexts">History</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col id="sliderHoverEvent">
+          <img id="sliderImgs" src="assets/icon/shopping-cart-1.png"/>
+          <p id="sliderMenuTexts">Story</p>
+        </ion-col>
+      </ion-row>
+
+      
+    </ion-grid>
+
+    <ion-grid  >
+      <ion-row no-padding>
+        <ion-col no-padding>
+          <button full ion-button clear color="dark">Setting</button>
+        </ion-col>
+         
+      </ion-row>
+      <ion-row no-padding>
+        <ion-col no-padding>
+          <button (tap)="logout()" ion-button full clear color="dark">Log out</button>
+        </ion-col>
+      </ion-row>
+     </ion-grid>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

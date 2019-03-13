@@ -1,0 +1,72 @@
+<ion-content id="particle-container" padding no-bounce class="page-backgorund">
+  <ion-grid style="height: 100%">            
+
+    <ion-row justify-content-center align-items-center style=" height: 100%">
+      <ion-card style="background-color: rgba(255, 255, 255, 0.603);border-radius:2%;height: 80vh; ">
+        <ion-grid style="margin-top: 6vh">
+
+
+          <ion-row style="text-align: center;">
+            <ion-col text-center align-self-center>
+              <p class="headerText">Crypto Mock</p>
+            </ion-col>
+          </ion-row>
+
+          <ion-row style="margin-top: 4vh;margin-bottom: 4vh;">
+            <ion-col text-center align-self-center>
+
+              <ion-item class="input-background">
+                <ion-label>
+                  <ion-icon name="ios-person-outline" item-left></ion-icon>
+                </ion-label>
+                <ion-input [(ngModel)]="user.username" type="text" placeholder="Username"></ion-input>
+              </ion-item>
+
+              <ion-item class="input-background">
+                <ion-label>
+                  <ion-icon name="ios-mail-outline" item-left></ion-icon>
+                </ion-label>
+                <ion-input [(ngModel)]="user.email" type="text" placeholder="Email"></ion-input>
+              </ion-item>
+
+              <ion-item class="input-background">
+                <ion-label>
+                  <ion-icon name="ios-lock-outline" item-left></ion-icon>
+                </ion-label>
+                <ion-input [(ngModel)]="user.password" type="password" placeholder="Password"></ion-input>
+              </ion-item>
+
+              <ion-item class="input-background">
+                <ion-label>
+                  <ion-icon name="ios-lock-outline" item-left></ion-icon>
+                </ion-label>
+                <ion-input [(ngModel)]="user.confirmPassword" type="password" placeholder="Confirm Password"></ion-input>
+              </ion-item>
+
+
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-checkbox [(ngModel)]="user.policies" style="float: left;border-radius: 100%"></ion-checkbox>
+              <p id="fontProp" style="float: left; margin-left: 2vw; margin-top: 0.3vh">I’ve read the policies.</p>
+
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col></ion-col>
+            <ion-col text-center align-self-center col-6>
+              <button (tap)="register(user)" style="border-radius: 4%;height: 4.5vh;" ion-button block>Register</button>
+            </ion-col>
+            <ion-col></ion-col>
+          </ion-row>
+          
+                  <p text-center id="login" style="float: left; margin-top: 2vh; ">Already a member ? <i (tap)="navigateToLogin()" style="color: blue">Login</i> </p>
+                 
+  
+        </ion-grid>
+      </ion-card>
+    </ion-row>
+  
+  </ion-grid>
+</ion-content>

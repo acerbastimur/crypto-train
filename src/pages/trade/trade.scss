@@ -1,0 +1,152 @@
+page-trade {
+    #headText {
+        color: whitesmoke;
+        font-family: 'Cinzel', serif;
+        font-size: 180%;
+        font-weight: 700;
+    }
+    .coin {
+        background-color: #E7E7E7;
+        border-radius: 0.5vw;
+        width: 100%;
+        height: 6vh;
+    }
+
+
+
+.undetailedCoin {
+  background-color: #E7E7E7;
+  margin-top: 2vh;
+  width: 94%;
+  float: left;
+  margin-left: 3%;
+  border-top-left-radius: 1vw;
+  border-top-right-radius: 1vw;
+padding-left: 2vw;
+  
+}
+ .details {
+  background-color: #E7E7E7;
+  width: 94%;
+  float: left;
+  margin-left: 3%;
+
+      }
+    #logo {
+        max-width: 40% !important;
+      }
+      
+      .col {
+        padding: 0 !important;
+      }
+      
+      #refresh {
+        float: right;
+      }
+      
+      #colname {
+        text-transform: uppercase;
+        color: #466581;
+        margin: 13px 0 0 10px;
+        display: block;
+        
+      }
+       button-effect {
+        background-color:red;
+      }
+      
+      span.label {
+        text-transform: uppercase !important;
+        font-size: 0.7em;
+        color: #327eb1;
+        display: block;
+      }
+      
+      span.answer {
+        font-size: 0.7em;
+      }
+      
+      .end {
+        text-align: right;
+      }
+      
+      .list-md ion-item-options .button {
+        height: 45px !important;
+        background-color: #19232c !important;
+      }
+      
+      .list-md ion-item-options {
+        border-bottom: 0;
+      }
+      
+      .size {
+        font-size: 28px;
+        padding: 10px;
+      }
+      .walletText {
+        float: left;
+      }
+     .walletAmount {
+       float: right;
+     }
+     .youHaveText {
+       float: left;
+       margin-top: 1vh;
+
+     }
+     .youHaveAmount {
+       float: right;
+       margin-top: 1vh;
+
+     }
+     .amountToBuy {
+      float: left;
+      margin-top: 2vh;
+    }
+    .amountToBuyInput {
+      float: right;
+      height: 4vh;
+      width: 20%;
+      margin-top: 1vh;
+      border: 0;
+      border-radius: 4%;
+      border-bottom: 1px solid rgb(189, 189, 189);
+      background-color: #E7E7E7;
+    }
+
+    .totalText {
+      float: left;
+      margin-top: 4vh;
+
+    }
+   .totalPrice {
+     float: right;
+     margin-top: 4vh;
+
+   }
+   .buyCoinBtn {
+    width: 30vw;
+    background-color: rgb(196, 179, 172);
+    border: 0.22vw outset #3aa6ff;
+    float:right; 
+  }
+  .cancelBuyBtn {
+    width:30vw;
+    background-color: rgb(196, 179, 172);
+    border: 0.22vw outset #2bb6ff;
+    float:left; 
+  }
+
+
+  #searchInput {
+    border:0;
+    opacity:0;
+    width:0; 
+    border-bottom: 1px solid rgb(255, 255, 255);
+    float:right;
+    margin-top:3vh;
+    margin-right: -5vw;
+    border-radius: 1vw;
+    height: 4vh;
+  }
+}

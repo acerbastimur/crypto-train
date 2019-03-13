@@ -1,0 +1,126 @@
+<ion-content class="page-backgorund">
+  <button large clear ion-button menuToggle>
+    <ion-icon color="light" name="menu"></ion-icon>
+  </button>
+ 
+  <button   large clear ion-button style="float:right;" (tap)="searchToggle()">
+    <ion-icon id ="searchIcon" float-right color="light" name="search"></ion-icon>
+
+  </button>
+ <input id="searchInput" placeholder="Search Coin" (change)="filterItems($event)"/>
+  <ion-grid style="margin-bottom: 2vh;">
+
+    <ion-row>
+      <ion-col text-center>
+        <p id="headText">Crypto Train Market</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <span id="colname">Coin Name</span>
+      </ion-col>
+
+      <ion-col>
+        <button ion-button icon-left clear (tap)='refreshCoins()' id='refresh' color='light'>
+          <ion-icon name='refresh'></ion-icon> Refresh
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list *ngIf='coins'>
+    <div *ngFor='let coin of objectKeys(coins); let i = index'>
+      <ion-item class="undetailedCoin" (tap)='coinDetails(coin, i)' no-lines>
+        <img style="float: left;" width="30" height="30" src="assets/imgs/coinsPng/{{coin | lowercase}}.png" />
+
+        <p style="float: left; margin-left: 1vw;margin-top: 1vh">{{ coin }}</p>
+        <ion-note item-end style="color: slategrey">
+          {{ coins[coin].USD | currency:'USD' }}
+        </ion-note>
+      </ion-item>
+
+
+
+
+      <ion-item class='details' *ngIf='detailToggle[i]' no-lines>
+        <ion-grid>
+          <div id="detailsItem">
+            <ion-row>
+              <ion-col>
+                <span class='label'>Market Cap</span>
+                <span class="answer">{{ details.MKTCAP }}</span>
+              </ion-col>
+              <ion-col>
+                <span class='label'>Change (24HR)</span>
+                <span class="answer">{{ details.CHANGE24HOUR }} ({{ details.CHANGEPCT24HOUR }}%) </span>
+              </ion-col>
+              <ion-col class='end'>
+                <span class='label'>High (24HR)</span>
+                <span class="answer">{{ details.HIGH24HOUR }}</span>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col>
+                <br />
+                <span class="label">Price (30 Days)</span>
+                <canvas id='canvas{{i}}'>{{ chart[i] }}</canvas>
+              </ion-col>
+            </ion-row>
+
+            <ion-row style="margin-top: 2vh">
+              <ion-col text-center>
+                <button (tap)="openBuyPanel(coin)" style="width: 45vw;background-color: rgb(196, 179, 172);border: 0.22vw outset #3366ff;" ion-button
+                  round>Buy</button>
+              </ion-col>
+            </ion-row>
+          </div>
+
+          <div style="display: none" id="buyItem">
+            <ion-row>
+              <ion-col>
+                <p class="walletText">Your Wallet :</p>
+                <p text-right class="walletAmount">{{youHaveDollar | number:'.1-1'}} $</p>
+              </ion-col>
+
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <p class="youHaveText">You Have : </p>
+                <p class="youHaveAmount"> {{youHaveCoinAmount | number:'.1-4'}} {{coin}}</p>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col>
+                <p class="amountToBuy">Amount to Buy : </p>
+                <input [(ngModel)]="amountToBuy" step="0.2" (ngModelChange)="totalPriceCalculator(coin)"  type="number" class="amountToBuyInput" placeholder="0.0000" />
+              </ion-col>
+            </ion-row>
+
+            <ion-row style="border-bottom: 1px solid rgb(189, 189, 189);">
+              <ion-col>
+                <p class="totalText">Total : </p>
+                <p class="totalPrice"> ${{totalPrice | number:'.1-2'}}</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <button class="buyCoinBtn" (tap)=" buy(coin)" ion-button round>Buy {{coin}}</button>
+                <button class="cancelBuyBtn" ion-button round (tap)="cancel(coin,i)">Cancel</button>
+
+              </ion-col>
+            </ion-row>
+          </div>
+
+        </ion-grid>
+
+      </ion-item>
+
+    </div>
+  </ion-list>
+
+</ion-content>
